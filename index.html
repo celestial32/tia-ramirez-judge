@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tia Ramirez for Judge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section with Flag Background */
+        .hero {
+            position: relative;
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('flag.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(220, 38, 38, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Endorsement Marquee Section */
+        .endorsement-marquee-section {
+            background: white;
+            padding: 3rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle flag watermark behind endorsements */
+        .endorsement-marquee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('flag.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .endorsement-marquee-section h3 {
+            text-align: center;
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            position: relative;
+            background: #f8f9fa;
+            padding: 2rem 0;
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: fit-content;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            margin: 0 2rem;
+            text-align: center;
+            width: 150px;
+        }
+
+        .marquee-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .marquee-item:hover .marquee-photo {
+            transform: scale(1.1);
+        }
+
+        .marquee-name {
+            font-weight: bold;
+            color: #1e3a8a;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .view-all-endorsements {
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .view-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            text-align: center;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(to bottom, white 0%, #f8f9fa 100%);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-header h2 {
+            font-size: 2.8rem;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-header .subtitle {
+            font-size: 1.3rem;
+            color: #dc2626;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-header .tagline {
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text h3:first-child {
+            margin-top: 0;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .about-text strong {
+            color: #1e3a8a;
+        }
+
+        .call-to-action-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .call-to-action-box p {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Donate Section with Flag Background */
+        #donate {
+            position: relative;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        #donate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('flag.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        #donate::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(220, 38, 38, 0.9) 100%);
+            z-index: 1;
+        }
+
+        #donate h2 {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .donate-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .donate-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .donate-button {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .donate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1e3a8a;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page System */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Full Endorsements Page */
+        .endorsements-page {
+            min-height: 100vh;
+        }
+
+        .endorsements-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+
+        .endorsement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 5px solid #dc2626;
+        }
+
+        .endorsement-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        .endorsement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .endorser {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .endorser:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .endorser-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 2rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .endorser-name {
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .endorser-title {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #f8f9fa;
+            color: #1e3a8a;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1e3a8a;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .about-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .endorsement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .marquee-item {
+                width: 120px;
+            }
+
+            .marquee-photo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo" onclick="showPage('home')">Tia Ramirez for Judge</a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home'); scrollToSection('about')">About</a></li>
+                <li><a href="#" onclick="showPage('endorsements')">Endorsements</a></li>
+                <li><a href="#" onclick="showPage('home'); scrollToSection('donate')">Donate</a></li>
+                <li><a href="#" onclick="showPage('home'); scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Tia Ramirez for Judge</h1>
+                <p class="tagline">Decades of Service, Unwavering Grit</p>
+                <p class="subtitle">Bringing Firm, Fair, and Empathetic Justice to the San Diego Bench</p>
+                <a href="#donate" class="cta-button" onclick="scrollToSection('donate')">Support Our Campaign</a>
+            </div>
+        </section>
+
+        <!-- Scrolling Endorsement Marquee -->
+        <div class="endorsement-marquee-section">
+            <h3>Endorsed by Distinguished Judges and Community Leaders</h3>
+            <div class="marquee-container">
+                <div class="marquee-content" id="marqueeContent">
+                    <!-- First set of endorsers -->
+                    <div class="marquee-item">
+                        <div class="marquee-photo">MS</div>
+                        <div class="marquee-name">Judge Michael T. Smyth</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">DG</div>
+                        <div class="marquee-name">Judge Daniel B. Goldstein</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">RW</div>
+                        <div class="marquee-name">Judge Richard S. Whitney</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">DM</div>
+                        <div class="marquee-name">Judge Dwayne Moring</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">EM</div>
+                        <div class="marquee-name">Judge Earl Maas</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">ST</div>
+                        <div class="marquee-name">Judge Sherry Thomson-Taylor</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">PS</div>
+                        <div class="marquee-name">Judge Polly Shamoon</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">CM</div>
+                        <div class="marquee-name">Judge Christopher S. Morris</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">CR</div>
+                        <div class="marquee-name">Judge Catherine Richardson</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">DN</div>
+                        <div class="marquee-name">Judge Danna Nicholas</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">JG</div>
+                        <div class="marquee-name">Judge Jan I. Goldsmith</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">PG</div>
+                        <div class="marquee-name">Judge Peter L. Gallagher</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">HF</div>
+                        <div class="marquee-name">City Attorney Heather Ferbert</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">ME</div>
+                        <div class="marquee-name">Former City Attorney Mara Elliott</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">RC</div>
+                        <div class="marquee-name">Councilmember Raul Campillo</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">PD</div>
+                        <div class="marquee-name">Councilmember Patricia Dillard</div>
+                    </div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="marquee-item">
+                        <div class="marquee-photo">MS</div>
+                        <div class="marquee-name">Judge Michael T. Smyth</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">DG</div>
+                        <div class="marquee-name">Judge Daniel B. Goldstein</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">RW</div>
+                        <div class="marquee-name">Judge Richard S. Whitney</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">DM</div>
+                        <div class="marquee-name">Judge Dwayne Moring</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">EM</div>
+                        <div class="marquee-name">Judge Earl Maas</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">ST</div>
+                        <div class="marquee-name">Judge Sherry Thomson-Taylor</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">PS</div>
+                        <div class="marquee-name">Judge Polly Shamoon</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-item">
+                        <div class="marquee-photo">CM</div>
+                        <div class="marquee-name">Judge Christopher S. Morris</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">CR</div>
+                        <div class="marquee-name">Judge Catherine Richardson</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">DN</div>
+                        <div class="marquee-name">Judge Danna Nicholas</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">JG</div>
+                        <div class="marquee-name">Judge Jan I. Goldsmith</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">PG</div>
+                        <div class="marquee-name">Judge Peter L. Gallagher</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">HF</div>
+                        <div class="marquee-name">City Attorney Heather Ferbert</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">ME</div>
+                        <div class="marquee-name">Former City Attorney Mara Elliott</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">RC</div>
+                        <div class="marquee-name">Councilmember Raul Campillo</div>
+                    </div>
+                    <div class="marquee-item">
+                        <div class="marquee-photo">PD</div>
+                        <div class="marquee-name">Councilmember Patricia Dillard</div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-endorsements">
+                <a href="#" class="view-all-btn" onclick="showPage('endorsements')">View All Endorsements</a>
+            </div>
+        </div>
+
+        <section id="about">
+            <div class="about-header">
+                <h2>Tia Ramirez</h2>
+                <p class="subtitle">Decades of Service, Unwavering Grit</p>
+                <p class="tagline">Bringing Firm, Fair, and Empathetic Justice to the San Diego Bench</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Tia Ramirez is a seasoned legal professional and dedicated public servant whose life and career are a testament to the power of hard work, family values, and a deep-seated commitment to the rule of law. Tia's roots in this community run deep. After graduating from Rancho Bernardo High School, she earned her Bachelor's Degree from San Diego State University, laying the foundation for a career dedicated to the city she calls home.
+                    </p>
+
+                    <h3>A Journey of Extraordinary Grit</h3>
+                    <p>
+                        Tia's path to the legal profession was defined by extraordinary grit. While working full-time, she attended the Thomas Jefferson School of Law as the mother of two toddlers, aged 2 and 4. Despite the intense demands of work and motherhood, she excelled, graduating with honors and earning prestigious awards in both Deposition Practice and Advanced Trial Advocacy. This journey gave her a profound understanding of the challenges facing working families and the resilience required to uphold the law.
+                    </p>
+
+                    <h3>Current Leadership & Judicial Experience</h3>
+                    <p>
+                        Currently serving as the <strong>Chief Deputy City Attorney for the Gun Violence Reduction Unit</strong>, Tia manages critical operations and leads the charge in seeking Gun Violence Restraining Orders to remove guns from dangerous individuals, protecting San Diego citizens. Her judicial experience is equally robust; as an <strong>Administrative Law Judge</strong>, she presided over more than 120 state hearings. In that role, she was responsible for interpreting complex statutes and making pivotal evidentiary rulings, but more importantly, Tia ensured that every individual who appeared in her courtroom was treated with dignity and respect. This balanced background of advocacy and neutral decision-making has prepared her to serve the bench with integrity and wisdom.
+                    </p>
+
+                    <h3>Champion for Victims & Public Safety</h3>
+                    <p>
+                        Prior to her current role, Tia spent years championing the rights of victims and fighting for public safety. She led the <strong>Domestic Violence and Sex Crimes Unit</strong> as both a Chief Deputy City Attorney and Supervising Deputy City Attorney, overseeing case processing and providing strategic guidance to junior Deputies for criminal trials. Throughout her tenure, she has successfully litigated more than 22 trials as first chair, mentored junior deputies as a second chair, and managed high-priority cases. Her career has been a steady, principled climb of increasing responsibility within the City's most critical legal units.
+                    </p>
+
+                    <h3>Service as a Family Value</h3>
+                    <p>
+                        For Tia, service is a family value. Her husband is a combat veteran who served the country during combat deployments to both Iraq and Afghanistan. Today, they remain active members of the San Diego community, living with their "fur baby" and their youngest son, who is currently saving to attend trade school. Their oldest son continues the family tradition of hard work, currently away at college pursuing a degree in mechanical engineering. Beyond the courtroom, Tia is a dedicated mentor to prelaw students and an active member of several professional organizations.
+                    </p>
+
+                    <p>
+                        Tia Ramirez has the leadership, the local perspective, and the heart to serve San Diego as a fair and dedicated judge.
+                    </p>
+
+                    <div class="call-to-action-box">
+                        <p>Vote Tia Ramirez for San Diego Superior Court Judge, Seat #32:<br>A Firm, Fair, and Empathetic approach to the bench.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="donate">
+            <h2>Support Our Campaign</h2>
+            <div class="donate-content">
+                <p>
+                    Your contribution will help us reach voters and share our message of fair and impartial justice. 
+                    Every donation, no matter the size, makes a difference in our campaign.
+                </p>
+                <a href="#" class="donate-button">Donate Now</a>
+                <p style="margin-top: 2rem; font-size: 0.9rem;">
+                    Paid for by Tia Ramirez for Judge Campaign
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- ENDORSEMENTS PAGE -->
+    <div id="endorsements" class="page endorsements-page">
+        <section style="padding-top: 2rem;">
+            <a href="#" class="back-button" onclick="showPage('home')">← Back to Home</a>
+            <h2>Our Endorsements</h2>
+            <p class="endorsements-intro">
+                Tia Ramirez is proud to have earned the support of distinguished judges and community leaders throughout San Diego County.
+            </p>
+            
+            <div class="endorsement-card">
+                <h3>Judicial Leaders</h3>
+                <div class="endorsement-grid">
+                    <div class="endorser">
+                        <div class="endorser-photo">MS</div>
+                        <div class="endorser-name">Judge Michael T. Smyth</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">DG</div>
+                        <div class="endorser-name">Judge Daniel B. Goldstein</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">RW</div>
+                        <div class="endorser-name">Judge Richard S. Whitney</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">DM</div>
+                        <div class="endorser-name">Judge Dwayne Moring</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">EM</div>
+                        <div class="endorser-name">Judge Earl Maas</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">ST</div>
+                        <div class="endorser-name">Judge Sherry Thomson-Taylor</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">PS</div>
+                        <div class="endorser-name">Judge Polly Shamoon</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">CM</div>
+                        <div class="endorser-name">Judge Christopher S. Morris</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">CR</div>
+                        <div class="endorser-name">Judge Catherine Richardson</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">DN</div>
+                        <div class="endorser-name">Judge Danna Nicholas</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">JG</div>
+                        <div class="endorser-name">Judge Jan I. Goldsmith</div>
+                        <div class="endorser-title">Ret. Judge & Former SD City Attorney</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">PG</div>
+                        <div class="endorser-name">Judge Peter L. Gallagher</div>
+                        <div class="endorser-title">Ret.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endorsement-card">
+                <h3>Community Leaders</h3>
+                <div class="endorsement-grid">
+                    <div class="endorser">
+                        <div class="endorser-photo">HF</div>
+                        <div class="endorser-name">Heather Ferbert</div>
+                        <div class="endorser-title">City Attorney</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">ME</div>
+                        <div class="endorser-name">Mara Elliott</div>
+                        <div class="endorser-title">Former City Attorney</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">RC</div>
+                        <div class="endorser-name">Raul Campillo</div>
+                        <div class="endorser-title">San Diego City Council</div>
+                    </div>
+                    <div class="endorser">
+                        <div class="endorser-photo">PD</div>
+                        <div class="endorser-name">Patricia Dillard</div>
+                        <div class="endorser-title">La Mesa City Council</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tia Ramirez for Judge. All rights reserved.</p>
+        <p>Paid for by Tia Ramirez for Judge Campaign</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('navLinks').classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            return false;
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            document.getElementById('navLinks').classList.remove('active');
+            return false;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
