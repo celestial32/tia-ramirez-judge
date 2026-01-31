@@ -20,12 +20,13 @@
 
         /* Header/Navigation */
         header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
-            padding: 1.5rem 0;
+            background: #f8f9fa;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-bottom: 4px solid #c5a572;
         }
 
         nav {
@@ -55,16 +56,16 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #1e3a8a;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.2rem;
             transition: all 0.3s;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: none;
         }
 
         .nav-links a:hover {
-            color: #c5a572;
+            color: #dc2626;
             transform: translateY(-2px);
         }
 
@@ -93,7 +94,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.2;
+            opacity: 0.35;
             z-index: 0;
         }
 
@@ -104,7 +105,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(10, 14, 26, 0.85) 0%, rgba(30, 58, 138, 0.9) 50%, rgba(220, 38, 38, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.75) 0%, rgba(30, 58, 138, 0.8) 50%, rgba(220, 38, 38, 0.8) 100%);
             z-index: 1;
         }
 
@@ -180,7 +181,92 @@
             box-shadow: 0 12px 35px rgba(197, 165, 114, 0.6);
         }
 
-        /* Endorsement Marquee Section - FRONT PAGE ONLY */
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 3rem;
+            color: #c5a572;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            font-weight: bold;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(to bottom, #0f1d3d 0%, #1a1a2e 100%);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-header h2 {
+            font-size: 3.5rem;
+            color: #c5a572;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-content {
+            background: rgba(30, 58, 138, 0.25);
+            padding: 3.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+            border: 3px solid #c5a572;
+        }
+
+        .about-text h3 {
+            color: #c5a572;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .about-text h3:first-child {
+            margin-top: 0;
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            line-height: 2;
+            text-align: justify;
+            color: #e8e8e8;
+        }
+
+        .about-text strong {
+            color: #c5a572;
+            font-weight: bold;
+        }
+
+        .call-to-action-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            border: 4px solid #c5a572;
+        }
+
+        .call-to-action-box p {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Endorsement Marquee Section - BELOW ABOUT SECTION */
         .endorsement-marquee-section {
             background: linear-gradient(135deg, #0f1d3d 0%, #2d1b1b 100%);
             padding: 4rem 0;
@@ -200,7 +286,7 @@
             background-image: url('flag.jpeg');
             background-size: cover;
             background-position: center;
-            opacity: 0.08;
+            opacity: 0.12;
             pointer-events: none;
         }
 
@@ -305,91 +391,6 @@
             box-shadow: 0 8px 25px rgba(197, 165, 114, 0.6);
         }
 
-        /* Sections */
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-            position: relative;
-        }
-
-        section h2 {
-            font-size: 3.2rem;
-            margin-bottom: 3rem;
-            color: #c5a572;
-            text-align: center;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-            font-weight: bold;
-        }
-
-        /* About Section */
-        #about {
-            background: linear-gradient(to bottom, #0f1d3d 0%, #1a1a2e 100%);
-        }
-
-        .about-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .about-header h2 {
-            font-size: 3.5rem;
-            color: #c5a572;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-content {
-            background: rgba(30, 58, 138, 0.25);
-            padding: 3.5rem;
-            border-radius: 15px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.6);
-            border: 3px solid #c5a572;
-        }
-
-        .about-text h3 {
-            color: #c5a572;
-            font-size: 1.8rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .about-text h3:first-child {
-            margin-top: 0;
-        }
-
-        .about-text p {
-            font-size: 1.15rem;
-            margin-bottom: 1.5rem;
-            line-height: 2;
-            text-align: justify;
-            color: #e8e8e8;
-        }
-
-        .about-text strong {
-            color: #c5a572;
-            font-weight: bold;
-        }
-
-        .call-to-action-box {
-            background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 3rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            border: 4px solid #c5a572;
-        }
-
-        .call-to-action-box p {
-            font-size: 1.6rem;
-            font-weight: bold;
-            margin: 0;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
         /* Donate Section with Flag Background and Full Body Photo */
         #donate {
             position: relative;
@@ -409,7 +410,7 @@
             background-image: url('flag.jpeg');
             background-size: cover;
             background-position: center;
-            opacity: 0.18;
+            opacity: 0.3;
             z-index: 0;
         }
 
@@ -420,7 +421,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(220, 38, 38, 0.92) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(220, 38, 38, 0.85) 100%);
             z-index: 1;
         }
 
@@ -485,6 +486,10 @@
         }
 
         /* Contact Section */
+        #contact {
+            background: linear-gradient(to bottom, #1a1a2e 0%, #0f1d3d 100%);
+        }
+
         .contact-content {
             max-width: 700px;
             margin: 0 auto;
@@ -535,8 +540,8 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #0a0e1a 0%, #1e3a8a 100%);
-            color: white;
+            background: #f8f9fa;
+            color: #1e3a8a;
             text-align: center;
             padding: 3rem 2rem;
             margin-top: 0;
@@ -553,9 +558,10 @@
         }
 
         footer p {
-            color: #e8e8e8;
+            color: #1e3a8a;
             font-size: 1rem;
             margin: 0.5rem 0;
+            font-weight: 600;
         }
 
         /* Mobile Menu Toggle */
@@ -563,7 +569,7 @@
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: #1e3a8a;
             font-size: 1.8rem;
             cursor: pointer;
         }
@@ -693,10 +699,11 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: #1e3a8a;
+                background: #f8f9fa;
                 flex-direction: column;
                 padding: 1rem;
                 gap: 0;
+                border-top: 2px solid #c5a572;
             }
 
             .nav-links.active {
@@ -767,7 +774,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home'); scrollToSection('about')">About</a></li>
                 <li><a href="#" onclick="showPage('endorsements')">Endorsements</a></li>
-                <li><a href="#" onclick="showPage('home'); scrollToSection('donate')">Donate</a></li>
+                <li><a href="https://www.efundraisingconnections.com/c/TiaRamirezforJudge2026" target="_blank">Donate</a></li>
                 <li><a href="#" onclick="showPage('home'); scrollToSection('contact')">Contact</a></li>
             </ul>
         </nav>
@@ -789,7 +796,48 @@
             </div>
         </section>
 
-        <!-- Scrolling Endorsement Marquee - FRONT PAGE ONLY -->
+        <section id="about">
+            <div class="about-header">
+                <h2>About Tia Ramirez</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Tia Ramirez is a seasoned legal professional and dedicated public servant whose life and career are a testament to the power of hard work, family values, and a deep-seated commitment to the rule of law. Tia's roots in this community run deep. After graduating from Rancho Bernardo High School, she earned her Bachelor's Degree from San Diego State University, laying the foundation for a career dedicated to the city she calls home.
+                    </p>
+
+                    <h3>A Journey of Extraordinary Grit</h3>
+                    <p>
+                        Tia's path to the legal profession was defined by extraordinary grit. While working full-time, she attended the Thomas Jefferson School of Law as the mother of two toddlers, aged 2 and 4. Despite the intense demands of work and motherhood, she excelled, graduating with honors and earning prestigious awards in both Deposition Practice and Advanced Trial Advocacy. This journey gave her a profound understanding of the challenges facing working families and the resilience required to uphold the law.
+                    </p>
+
+                    <h3>Current Leadership & Judicial Experience</h3>
+                    <p>
+                        Currently serving as the <strong>Chief Deputy City Attorney for the Gun Violence Reduction Unit</strong>, Tia manages critical operations and leads the charge in seeking Gun Violence Restraining Orders to remove guns from dangerous individuals, protecting San Diego citizens. Her judicial experience is equally robust; as an <strong>Administrative Law Judge</strong>, she presided over more than 120 state hearings. In that role, she was responsible for interpreting complex statutes and making pivotal evidentiary rulings, but more importantly, Tia ensured that every individual who appeared in her courtroom was treated with dignity and respect. This balanced background of advocacy and neutral decision-making has prepared her to serve the bench with integrity and wisdom.
+                    </p>
+
+                    <h3>Champion for Victims & Public Safety</h3>
+                    <p>
+                        Prior to her current role, Tia spent years championing the rights of victims and fighting for public safety. She led the <strong>Domestic Violence and Sex Crimes Unit</strong> as both a Chief Deputy City Attorney and Supervising Deputy City Attorney, overseeing case processing and providing strategic guidance to junior Deputies for criminal trials. Throughout her tenure, she has successfully litigated more than 22 trials as first chair, mentored junior deputies as a second chair, and managed high-priority cases. Her career has been a steady, principled climb of increasing responsibility within the City's most critical legal units.
+                    </p>
+
+                    <h3>Service as a Family Value</h3>
+                    <p>
+                        For Tia, service is a family value. Her husband is a combat veteran who served the country during combat deployments to both Iraq and Afghanistan. Today, they remain active members of the San Diego community, living with their "fur baby" and their youngest son, who is currently saving to attend trade school. Their oldest son continues the family tradition of hard work, currently away at college pursuing a degree in mechanical engineering. Beyond the courtroom, Tia is a dedicated mentor to prelaw students and an active member of several professional organizations.
+                    </p>
+
+                    <p>
+                        Tia Ramirez has the leadership, the local perspective, and the heart to serve San Diego as a fair and dedicated judge.
+                    </p>
+
+                    <div class="call-to-action-box">
+                        <p>Vote Tia Ramirez for San Diego Superior Court Judge, Seat #32:<br>A Firm, Fair, and Empathetic approach to the bench.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Endorsement Marquee - NOW BELOW ABOUT SECTION -->
         <div class="endorsement-marquee-section">
             <h3>Endorsed by Distinguished Judges and Community Leaders</h3>
             <div class="marquee-container">
@@ -930,47 +978,6 @@
                 <a href="#" class="view-all-btn" onclick="showPage('endorsements')">View All Endorsements</a>
             </div>
         </div>
-
-        <section id="about">
-            <div class="about-header">
-                <h2>About Tia Ramirez</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Tia Ramirez is a seasoned legal professional and dedicated public servant whose life and career are a testament to the power of hard work, family values, and a deep-seated commitment to the rule of law. Tia's roots in this community run deep. After graduating from Rancho Bernardo High School, she earned her Bachelor's Degree from San Diego State University, laying the foundation for a career dedicated to the city she calls home.
-                    </p>
-
-                    <h3>A Journey of Extraordinary Grit</h3>
-                    <p>
-                        Tia's path to the legal profession was defined by extraordinary grit. While working full-time, she attended the Thomas Jefferson School of Law as the mother of two toddlers, aged 2 and 4. Despite the intense demands of work and motherhood, she excelled, graduating with honors and earning prestigious awards in both Deposition Practice and Advanced Trial Advocacy. This journey gave her a profound understanding of the challenges facing working families and the resilience required to uphold the law.
-                    </p>
-
-                    <h3>Current Leadership & Judicial Experience</h3>
-                    <p>
-                        Currently serving as the <strong>Chief Deputy City Attorney for the Gun Violence Reduction Unit</strong>, Tia manages critical operations and leads the charge in seeking Gun Violence Restraining Orders to remove guns from dangerous individuals, protecting San Diego citizens. Her judicial experience is equally robust; as an <strong>Administrative Law Judge</strong>, she presided over more than 120 state hearings. In that role, she was responsible for interpreting complex statutes and making pivotal evidentiary rulings, but more importantly, Tia ensured that every individual who appeared in her courtroom was treated with dignity and respect. This balanced background of advocacy and neutral decision-making has prepared her to serve the bench with integrity and wisdom.
-                    </p>
-
-                    <h3>Champion for Victims & Public Safety</h3>
-                    <p>
-                        Prior to her current role, Tia spent years championing the rights of victims and fighting for public safety. She led the <strong>Domestic Violence and Sex Crimes Unit</strong> as both a Chief Deputy City Attorney and Supervising Deputy City Attorney, overseeing case processing and providing strategic guidance to junior Deputies for criminal trials. Throughout her tenure, she has successfully litigated more than 22 trials as first chair, mentored junior deputies as a second chair, and managed high-priority cases. Her career has been a steady, principled climb of increasing responsibility within the City's most critical legal units.
-                    </p>
-
-                    <h3>Service as a Family Value</h3>
-                    <p>
-                        For Tia, service is a family value. Her husband is a combat veteran who served the country during combat deployments to both Iraq and Afghanistan. Today, they remain active members of the San Diego community, living with their "fur baby" and their youngest son, who is currently saving to attend trade school. Their oldest son continues the family tradition of hard work, currently away at college pursuing a degree in mechanical engineering. Beyond the courtroom, Tia is a dedicated mentor to prelaw students and an active member of several professional organizations.
-                    </p>
-
-                    <p>
-                        Tia Ramirez has the leadership, the local perspective, and the heart to serve San Diego as a fair and dedicated judge.
-                    </p>
-
-                    <div class="call-to-action-box">
-                        <p>Vote Tia Ramirez for San Diego Superior Court Judge, Seat #32:<br>A Firm, Fair, and Empathetic approach to the bench.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="donate">
             <h2>Support Our Campaign</h2>
